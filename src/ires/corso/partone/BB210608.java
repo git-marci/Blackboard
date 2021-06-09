@@ -233,7 +233,7 @@ public class BB210608 {
          ***********
         *************
     -----------------------
-       2° problema
+        2° problema
          ***********
           *********
            *******
@@ -321,14 +321,20 @@ public class BB210608 {
         System.out.println("");
         System.out.println("------------------------------------------");
         for(i = 1; i <= d; i++)
-        {
             computeAndPrintDiamondLine(i, d);
-        }
 
         for(i = d - 1; i >= 1; i--)
-        {
             computeAndPrintDiamondLine(i, d);
+
+        // ONLY 1 LOOP
+        System.out.println("");
+        System.out.println("------------------------------------------");
+        int doubleDim = d * 2;
+        for(i = 1; i <= doubleDim - 1; i++) {
+            int pattern = (i > d)? doubleDim - i: i;
+            computeAndPrintDiamondLine(pattern, d);
         }
+
     }
 
     public static void computeAndPrintDiamondLine(int lineIndex, int diamondSize) {
