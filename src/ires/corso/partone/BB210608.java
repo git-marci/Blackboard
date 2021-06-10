@@ -335,18 +335,71 @@ public class BB210608 {
             computeAndPrintDiamondLine(pattern, d);
         }
 
+        // Ciclo della i con d = 7
+        /*
+        1
+        2
+        3
+        4
+        5
+        6
+        7   ==> fino a qui stampo la riga che corrisponde alla i: computeAndPrintDiamondLine(i, d);
+        -------------------------------------------------------------------------------------------
+        8   ==> da qui in avanti devo "invertire" le i: da 8 devo passare a un nuovo valore pattern = 6
+        9   da i = 9 passo a pattern = 5
+        10  da i = 10 passo a pattern = 4
+        11  ...
+        12
+        13  da i = 13 passo a pattern = 1
+
+        Dopo il numero sette, se sottraggo d ottengo nuovamente valori di i crescenti da 1:
+        i' = 8 - d = 8 - 7 ==> 1
+        i' = 9 - d = 9 - 7 ==> 2
+        i' = 10 - d = 10 - 7 ==> 3
+        ....
+
+        Se sottraggo i' a d ottengo il nuovo contatore, che chiamo pattern:
+        pattern = d - i' = d - 1 = 7 - 1 = 6
+        pattern = d - i' = d - 2 = 7 - 2 = 5
+        pattern = d - i' = d - 3 = 7 - 3 = 4
+        etc.
+
+        i' = i - d;
+        pattern = d - i'
+
+        ==> pattern = d - i + d ==> pattern = 2d - i
+
+         */
+
     }
 
     public static void computeAndPrintDiamondLine(int lineIndex, int diamondSize) {
         int numSpaces = diamondSize - lineIndex;      // Numero di spazi
         int numChars = lineIndex * 2 - 1;             // Numero di caratteri <> ""
-        printDiamondStars(numSpaces, numChars);
+        //printDiamondStars(numSpaces, numChars);
+        printAnotherPattern(numSpaces, numChars);
     }
 
     public static void printDiamondStars(int spaces, int stars) {
         int j;
         for(j = 1; j <= spaces; j++) System.out.print(" ");
         for(j = 1; j <= stars; j++) System.out.print("*");
+        System.out.print("\n");
+    }
+
+    public static void printDiamondNumbers(int spaces, int numbers) {
+        int j;
+        int halfNumbersP1 = numbers / 2 + 1;
+        for(j = halfNumbersP1; j >= 1; j --) System.out.print(j);
+        for(j = 2; j <= halfNumbersP1; j ++) System.out.print(j);
+        System.out.print("\n");
+    }
+
+    public static void printAnotherPattern(int spaces, int numbers) {
+        int j;
+        int n = 4; // lo fisso dopo
+        for(j = n; j >= 1; j --) System.out.print(j);
+        for(j = 2; j <= n; j ++) System.out.print(j);
         System.out.print("\n");
     }
 
