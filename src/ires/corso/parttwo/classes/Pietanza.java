@@ -5,7 +5,7 @@ public class Pietanza
     // Variabile static ==> ereditata dalle classi figlie
     static boolean isActive = false;
 
-    protected String nome;
+    private String nome;
     protected int porzioni;
     protected boolean arrivato = false;
     protected double price = 0.0;

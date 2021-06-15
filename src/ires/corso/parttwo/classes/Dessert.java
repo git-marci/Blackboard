@@ -27,7 +27,7 @@ public class Dessert extends Pietanza
 
     public void prettyPrint(){
         System.out.println("Sta arrivando il dessert . . .");
-        System.out.printf("Ecco servito %d di %s\n",this.porzioni ,this.nome);
+        System.out.printf("Ecco servito %d di %s\n",this.porzioni ,this.getNome());
         setArrivato(true);
     }
 

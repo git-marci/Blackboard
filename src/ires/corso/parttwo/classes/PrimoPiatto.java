@@ -2,8 +2,9 @@ package ires.corso.parttwo.classes;
 
 public class PrimoPiatto extends Pietanza
 {
-    // ...include "gratis" tutto ciò che è definito in Pietanza
+    public static final int BEST_NUM_SPAGHETTI = 100; // Costante
 
+    // ...include "gratis" tutto ciò che è definito in Pietanza
     private boolean conParmigiano = false;
     private boolean inBrodo = false;
 
@@ -38,7 +39,7 @@ public class PrimoPiatto extends Pietanza
 
     public void prettyPrint(){
         System.out.println("Sta arrivando il primo . . .");
-        System.out.printf("Ecco servito %d di %s\n",this.porzioni ,this.nome);
+        System.out.printf("Ecco servito %d di %s\n", this.porzioni, this.getNome());
         setArrivato(true);
     }
 
@@ -51,5 +52,10 @@ public class PrimoPiatto extends Pietanza
             System.out.println("OVERRIDE: la gastronomia si lamenterà");
         }
         return dollars - price;
+    }
+
+    @Override
+    public String getNome() {
+        return ("PRIMO PIATTO: " + super.getNome());
     }
 }

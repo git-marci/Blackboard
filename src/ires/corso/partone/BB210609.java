@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class BB210609
 {
     public static void main(String[] args) {
-        sortingGame();
+        testInputString();
     }
 
     public static void testInputString()
@@ -66,74 +66,5 @@ public class BB210609
         */
 
         return res;
-    }
-
-    public static void sortingGame()
-    {
-        System.out.println("Inserisci un array (numeri separati da uno spazio, esempio: 1 2 3 ...)");
-        System.out.print("==>");
-        Scanner in = new Scanner(System.in);
-        String nl = in.nextLine();
-        String[] strArr = nl.split(" ");
-
-        // Costruisco array di interi a partire dall'input
-        int[] intArr = new int[strArr.length];
-        /*
-        for(int j = 0; j < strArr.length; j++) {
-            System.out.printf("Elemento %d-esimo dell'array ==> %s\n", j + 1, strArr[j]);
-            intArr[j] = Integer.parseInt(strArr[j]);
-        }
-         */
-
-        // Ordino l'array
-        int[] sortArr = Arrays.copyOf(intArr, intArr.length);
-        Arrays.sort(sortArr);
-        /*
-        for(int j = 0; j < sortArr.length; j++) {
-            System.out.printf("Elemento %d-esimo dell'array ordinato ==> %d\n", j + 1, sortArr[j]);
-        }
-         */
-
-        // Verifico che l'array sia ordinato
-        if(Arrays.equals(sortArr,intArr)) {
-            System.out.println("L'array è già ordinato, non c'è nemmeno gusto a giocare con te...");
-            return;
-        }
-
-        // Costruisco l'array per giocare
-        String[] gameArray = new String[strArr.length + 1];
-        for(int j = 0; j < strArr.length; j++)
-            gameArray[j] = strArr[j];
-        gameArray[gameArray.length - 1] = "X";
-
-        // Game loop
-        int indexX = gameArray.length - 1;
-        boolean finished = false;
-        printGameArray(gameArray);
-        while(!finished) {
-            System.out.print("- Dimmi l'indice del numero da spostare (q o Q per uscire): ");
-            String nextCommand = in.nextLine();
-            if(nextCommand.equals("q") || nextCommand.equals("Q")) {
-                finished = true;
-            }
-            else {
-                int index = Integer.parseInt(nextCommand);
-                String elemToMove = gameArray[index];
-                gameArray[indexX] = elemToMove;
-                gameArray[index] = "X";
-                indexX = index;
-                printGameArray(gameArray);
-
-                // MANCA: verifica che l'array sia ordinato...
-            }
-        }
-    }
-
-    public static void printGameArray(String[] gArr) {
-        System.out.print("[ ");
-        for(int j = 0; j < gArr.length; j++) {
-            System.out.printf("%s ", gArr[j]);
-        }
-        System.out.print("]\n");
     }
 }

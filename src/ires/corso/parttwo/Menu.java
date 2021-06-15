@@ -45,11 +45,6 @@ public class Menu
 
         Pietanza pt3 = (Pietanza) tortaAlCioccolato;
 
-        // Esempio di override
-        System.out.println("");
-        System.out.println("--------------------------------------------");
-        System.out.println("Hai magnato eh? E ora devi pagare...");
-
         Pietanza[] ilConto = new Pietanza[3];
         /*
         ilConto[0] = pt1; <== setto gli elementi dell'array usando le references alle variabili "cast"
@@ -61,6 +56,17 @@ public class Menu
         ilConto[0] = pastaColPomodoro; // PrimoPiatto
         ilConto[1] = tagliataDiManzo; // SecondoPiatto
         ilConto[2] = tortaAlCioccolato; // Dessert
+
+        // Esempio di override
+        System.out.println("--------------------------------------------");
+        System.out.println("Il tuo menu");
+        for(int i = 0; i < ilConto.length; i++) {
+            System.out.println(ilConto[i].getNome());
+        }
+        System.out.println("");
+        System.out.println("--------------------------------------------");
+        System.out.println("Hai magnato eh? E ora devi pagare...");
+
 
         // Calcoliamo il totale da pagare
         double theSum = 0.0;

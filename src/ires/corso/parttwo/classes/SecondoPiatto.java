@@ -26,7 +26,7 @@ public class SecondoPiatto extends Pietanza
 
     public void prettyPrint(){
         System.out.println("Sta arrivando il secondo . . . ");
-        System.out.printf("Ecco servito %d di %s\n",this.porzioni ,this.nome);
+        System.out.printf("Ecco servito %d di %s\n",this.porzioni ,this.getNome());
         setArrivato(true);
     }
 }
