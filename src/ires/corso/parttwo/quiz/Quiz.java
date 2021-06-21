@@ -6,3 +6,4 @@ public class Quiz {
     //Lettura file con domande;
     //Array di array di interi(?)
 }
+//commento
