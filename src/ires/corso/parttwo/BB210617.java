@@ -6,11 +6,22 @@ import ires.corso.parttwo.calculator.SciCalc;
 import ires.corso.parttwo.monitoring.PositionMonitor;
 import ires.corso.parttwo.monitoring.vehicles.Automobile;
 import ires.corso.parttwo.monitoring.vehicles.Camion;
+import ires.corso.parttwo.monitoring.vehicles.VeicoliMotorizzati;
 
 import java.util.Arrays;
 
 public class BB210617
 {
+    private static BB210617 innerInstance;
+
+    private BB210617() {}
+
+    public static BB210617 getInstance() {
+        if(innerInstance == null)
+            innerInstance = new BB210617();
+        return innerInstance;
+    }
+
     public static void main(String[] args)
     {
         // creo una bicicletta...
@@ -18,6 +29,7 @@ public class BB210617
         // ho un cane...
         // mio figlio...
         // una macchina...
+        int theA = PositionMonitor.Monitorable.giveMeTheA();
 
         Automobile a = new Automobile("UD12345");
         PositionMonitor pma = new PositionMonitor(a);

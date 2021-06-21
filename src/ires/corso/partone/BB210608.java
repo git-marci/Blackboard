@@ -8,6 +8,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
+import java.nio.*;
+
 public class BB210608 {
 
     public enum NumeriNiki {
@@ -37,6 +39,9 @@ public class BB210608 {
 
     public static void draft()
     {
+        java.time.LocalDate ldtest;
+        Buffer b;
+
         double d = Double.parseDouble("1234");
         String str = "+234.58900";
         boolean isDouble = str.matches("[+-]?\\d+(\\.\\d+)?");

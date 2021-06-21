@@ -4,13 +4,21 @@ import java.time.LocalTime;
 
 public class PositionMonitor
 {
-    public interface Monitorable {
+    public interface Monitorable
+    {
+        int a = 123; // public, static, final
+
         String whoAreYou();
         String yourPosition();
 
         default String whatTimeIsIt() {
             LocalTime lt = LocalTime.now();
             return lt.toString();
+        }
+
+        // Invocabile sull'interfaccia
+        static int giveMeTheA() {
+            return a;
         }
     }
 

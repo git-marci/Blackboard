@@ -4,6 +4,7 @@ public class Staff extends Person
 {
     @Override
     public String eatSomething() {
+        //this.name = "BOBBI";
         System.out.println("Sono lo staff e mangio al ristorante");
         return null;
     }
