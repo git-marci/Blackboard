@@ -50,5 +50,6 @@ public class BB210604
         int address = 111;
         String sf = String.format("Mi chiamo %s e abito al numero %d", mn, address);
         System.out.println(sf);
+
     }
 }
