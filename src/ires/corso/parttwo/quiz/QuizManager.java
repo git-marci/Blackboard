@@ -1,6 +1,7 @@
 package ires.corso.parttwo.quiz;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 public class QuizManager {
 
@@ -12,6 +13,12 @@ public class QuizManager {
         //5 Mostra il punteggio
         //6 Chiede se uscire o farne un altro
         Quiz q = Lettore.CreateFromFile("provaQuiz.txt");
-        q.printQuiz();
+        //q.printQuiz();
+        Iterator<Domanda> itr = q.getQuizIterator();
+        while(itr.hasNext()){
+            Domanda domanda = itr.next();
+            Lettore.printToScreen(domanda.prettyPrint());
+            //DA INSERIRE INPUT RISPOSTA UTENTE E UTENTE
+        }
     }
 }

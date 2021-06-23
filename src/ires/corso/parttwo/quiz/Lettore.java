@@ -2,6 +2,7 @@ package ires.corso.parttwo.quiz;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -48,5 +49,9 @@ public class Lettore {
         }
 
         return q;
+    }
+
+    public static void printToScreen(String s){
+        System.out.println(s);
     }
 }
