@@ -1,0 +1,5 @@
+1.Quali sono le componenti elementari di un programma?;A.Istruzioni;B.Costanti;C.Espressioni;D.Strutture dati;E.Strutture di controllo;F.Break point;G.Variabili;H.Strutture di verifica;I.Compilatore
+2.Qual è l'ordine corretto delle fasi di trasformazione di un programma in software avendo adottato una soluzione ibrida?;A.Scrittura-compilazione-collegamento;B.Scrittura-compilazione-interpretazione;C.Scrittura-interpretazione
+3.Quali tra le seguenti soluzioni generalmente offre una esecuzione del programma più lenta rispetto alle altre?;A.Compilazione;B.Interpretazione;C.Ibrido
+4.Quale tipologia di diagramma UML descrive al meglio le iterazioni tra gli utilizzatori di un programma e le sue funzionalità?;A.Use case diagram;B.Activity diagram;C.Sequence diagram;D.Class diagram;E.State diagram
+5.Qual è la prima fase utile per la realizzazione di un programma?;A.Raccolta dei requisiti;B.Design;C.Manutenzione
