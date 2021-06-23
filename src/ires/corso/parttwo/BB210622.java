@@ -30,5 +30,12 @@ public class BB210622
         b1.numPages = 100; // modifica "forzata" per verificare che l'hash sia differente
         int hashB1After = b1.hashCode();
         System.out.println("hashcode di b1  DOPO modifica ==> " + hashB1After);
+
+        // Stringbuilder
+        StringBuilder sb = new StringBuilder();
+        StringBuilder sbEx = new StringBuilder("Marcello");
+        System.out.println(sbEx.toString());
+        sbEx.append(" Mauro");
+        System.out.println(sbEx.toString());
     }
 }

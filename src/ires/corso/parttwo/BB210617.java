@@ -31,11 +31,11 @@ public class BB210617
         // una macchina...
         int theA = PositionMonitor.Monitorable.giveMeTheA();
 
-        Automobile a = new Automobile("UD12345");
+        Automobile a = new Automobile("UD12345", "XYZ1234");
         PositionMonitor pma = new PositionMonitor(a);
         pma.displayPosition();
 
-        Camion c = new Camion("TS12345");
+        Camion c = new Camion("TS12345", "XYZ0987654");
         PositionMonitor pmc = new PositionMonitor(c);
         pmc.displayPosition();
 

@@ -3,8 +3,8 @@ package ires.corso.parttwo.monitoring.vehicles;
 public class Automobile
         extends VeicoliMotorizzati
 {
-    public Automobile(String targa) {
-        super(targa);
+    public Automobile(String targa, String numTelaio) {
+        super(targa,numTelaio);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package ires.corso.parttwo.media;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Book implements Cloneable
@@ -15,6 +16,7 @@ public class Book implements Cloneable
     private final String isbn;
     //private final int numPages;
     public int numPages;
+    private final ArrayList<Chapter> chapters = new ArrayList<>();
 
     public Book(String author, String title, String isbn, int numPages) {
         this.author = author;
@@ -67,7 +69,25 @@ public class Book implements Cloneable
     @Override
     protected Object clone() throws CloneNotSupportedException {
         Book book = new Book(this.author, this.title, this.isbn, this.numPages);
+        for(Chapter c: this.chapters) {
+            // book.addChapter(c); <== NO! passo reference a "chapters" interni dell'oggetto da clonare!
+            Chapter cCloned = (Chapter) c.clone();
+            book.addChapter(cCloned);
+        }
         return book;
+    }
+
+    // Aggiungo i capitoli
+    public void addChapter(Chapter c) {
+        chapters.add(c);
+    }
+
+    // Mi faccio restituire i capitoli
+    public ArrayList<Chapter> getChapters() throws CloneNotSupportedException {
+        ArrayList<Chapter> alc = new ArrayList<>();
+        for(Chapter c: this.chapters)
+            alc.add((Chapter)c.clone());
+        return alc;
     }
 
     public String getAuthor() {
