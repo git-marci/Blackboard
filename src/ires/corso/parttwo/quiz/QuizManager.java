@@ -18,7 +18,16 @@ public class QuizManager {
         while(itr.hasNext()){
             Domanda domanda = itr.next();
             Lettore.printToScreen(domanda.prettyPrint());
-            //DA INSERIRE INPUT RISPOSTA UTENTE E UTENTE
+            do {
+                String s = Lettore.askForInput("Specifica quali sono le risposte giuste separandole con una virgola (es A,B) " +
+                        "oppure un # per uscire");
+                if (s.equals("#"))
+                    break;
+                else{
+                    String[] arrStr = s.split(",");
+
+                }
+            } while();
         }
     }
 }

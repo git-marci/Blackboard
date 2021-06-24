@@ -2,7 +2,6 @@ package ires.corso.parttwo.quiz;
 
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,9 +17,6 @@ public class Lettore {
         return linee;
     }
 
-    //Gestisce input utente
-    //Si occupa di leggere da file le domande
-    //Gestisce output utente
     public static Quiz CreateFromFile(String path) throws IOException {
         // 1. leggo contenuto del file
         ArrayList<String> linee = readAFile(path);
@@ -53,5 +49,11 @@ public class Lettore {
 
     public static void printToScreen(String s){
         System.out.println(s);
+    }
+
+    public static String askForInput(String s){
+        Scanner in = new Scanner(System.in);
+        System.out.println(s);
+        return in.nextLine();
     }
 }
