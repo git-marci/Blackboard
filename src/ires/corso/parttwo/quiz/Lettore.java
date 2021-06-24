@@ -45,7 +45,16 @@ public class Lettore
 
         return null;
     }
+
     /*
+Q02|Qual è l'ordine corretto delle fasi di trasformazione di un programma in "||||" software avendo adottato una soluzione ibrida?
+A02.A|scrittura-compilazione-collegamento
+A02.B|scrittura-compilazione-interpretazione
+A02.C|scrittura-interpretazione
+
+
+
+
 1.	Quali sono le componenti elementari di un programma?
 A.	Istruzioni
 B.	Costanti
@@ -58,10 +67,6 @@ H.	Strutture di verifica
 I.	Compilatore
 
 1.  Da quante classi può ereditare una classe figlia?;A.  Quante se ne vuole;b.  Una;C. Due, una padre e una madre;
-
-
-
-
 
 2.	Qual è l'ordine corretto delle fasi di trasformazione di un programma in software avendo adottato una soluzione ibrida?
 A.	scrittura-compilazione-collegamento
