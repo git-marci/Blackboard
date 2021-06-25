@@ -1,6 +1,14 @@
 package ires.corso.parttwo;
 
+import ires.corso.parttwo.io.ThePrinter;
+
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class BB210624
 {
@@ -20,7 +28,8 @@ public class BB210624
         try {
             // copyBytes(); NO!
             // copyCharacters(); NO!
-            copyLines(); // <== UTILIZZIAMO QUESTO!
+            // copyLines(); // <== UTILIZZIAMO QUESTO COME "VECCHIO INPUT"
+            copyStreams(); // <== NUOVO INPUT (Java 8)
         }
         catch(Exception e) {
             System.out.println("Si è verificata un'eccezione...");
@@ -120,6 +129,34 @@ public class BB210624
             if (outputStream != null) {
                 outputStream.close();
             }
+        }
+    }
+
+    /* Java 8 */
+    public static void copyStreams()
+    {
+        ThePrinter tp = new ThePrinter();
+
+        try {
+            List<String> list = Files.readAllLines(Paths.get("xanadu.txt"));
+            Iterator<String> is = list.iterator();
+            while(is.hasNext()) {
+                tp.printSomething(is.next());
+            }
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        //read file into stream, try-with-resources
+        try (Stream<String> stream = Files.lines(Paths.get("xanadu.txt"))) {
+            stream.map(String::toUpperCase)
+                  .filter(s -> !s.startsWith("I"))
+                  .forEach(tp::printSomething);
+                  //.forEach(System.out :: println);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
