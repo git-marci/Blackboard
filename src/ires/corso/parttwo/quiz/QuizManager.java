@@ -27,7 +27,7 @@ public class QuizManager {
                     String[] arrStr = s.split(",");
 
                 }
-            } while();
+            } while(prova);
         }
     }
 }
