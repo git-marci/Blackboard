@@ -5,10 +5,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Lettore {
+public class Lettore
+{
     private static ArrayList<String> readAFile(String path) throws IOException {
         Scanner fileIn = new Scanner(Paths.get(path));
-        ArrayList<String> linee = new ArrayList<>();
+        ArrayList<String> linee= new ArrayList<>();
 
         while (fileIn.hasNextLine()) {
             linee.add(fileIn.nextLine());
@@ -23,7 +24,7 @@ public class Lettore {
 
         // 2. looppone per creare il quiz
         Quiz q = new Quiz();
-        for (String s : linee) {
+        for(String s: linee) {
 
             String[] domandeRisposte = s.split(";");
             //domandeRisposte[0] è sicuramente una domanda
