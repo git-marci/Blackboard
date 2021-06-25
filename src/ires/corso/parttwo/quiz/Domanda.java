@@ -40,4 +40,10 @@ public class Domanda
         }
         return sb.toString();
     }
+
+    //algoritmo di confronto tra risposte utente e risposte giuste
+    public RispostaUtente submitAnswer(String[] arrStr){
+
+      return null;
+    }
 }
