@@ -69,12 +69,12 @@ public class BB210624
         try {
             /*
                 FileReader ==> InputStreamReader ==> Reader
-                |
-                |--> utilizza FileInputStream al suo interno
+                │
+                └──> utilizza FileInputStream al suo interno
 
                 FileWriter ==> OutputStreamWriter ==> Writer
-                |
-                |--> utilizza FileOutputStream al suo interno
+                │
+                └──> utilizza FileOutputStream al suo interno
 
                 Reader e Writer sono due classi astratte, root rispettivamente
                 delle classi di lettura/scrittura di Character
