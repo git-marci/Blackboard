@@ -15,7 +15,7 @@ public class QuizManager {
         Quiz q = Lettore.CreateFromFile("provaQuiz.txt");
         //q.printQuiz();
         Iterator<Domanda> itr = q.getQuizIterator();
-        while(itr.hasNext()){
+        while(itr.hasNext()) {
             Domanda domanda = itr.next();
             Lettore.printToScreen(domanda.prettyPrint());
             do {
@@ -25,9 +25,8 @@ public class QuizManager {
                     break;
                 else{
                     String[] arrStr = s.split(",");
-
                 }
-            } while();
+            } while(true);
         }
     }
 }
