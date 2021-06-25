@@ -26,8 +26,9 @@ public class QuizManager
                     break;
                 else{
                     String[] arrStr = s.split(",");
+
                 }
-            } while(true);
+            } while(prova);
         }
     }
 }
