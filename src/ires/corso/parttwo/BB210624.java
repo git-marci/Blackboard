@@ -150,7 +150,7 @@ public class BB210624
             e.printStackTrace();
         }
 
-        //read file into stream, try-with-resources
+        // read file into stream, try-with-resources
         try (Stream<String> stream = Files.lines(Paths.get("xanadu.txt"))) {
             stream.map(String::toUpperCase)
                   .filter(s -> !s.startsWith("I"))
