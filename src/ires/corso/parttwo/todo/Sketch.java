@@ -47,8 +47,8 @@ public class Sketch
 
     // Provate a fare un'ipotesi delle classi a supporto:
     // --------------------------------------------------
-    // - una classe rapresenta l'utente
-    // - una classe rapresenta un "to-do" (1 to-do = 1 cosa da fare)
+    // - una classe rappresenta l'utente
+    // - una classe rappresenta un "to-do" (1 to-do = 1 cosa da fare)
     // - un'altra classe deve rappresentare il menu/le azioni effettivamente eseguibili
     // - "quizmanager" diventa ==> "todolist-manager"
     // - pensate bene a un gestore dell'input/output (cfr. la classe "lettore" di quiz)

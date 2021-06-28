@@ -3,7 +3,9 @@ package ires.corso.parttwo;
 import ires.corso.parttwo.io.ThePrinter;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -157,6 +159,40 @@ public class BB210624
         }
         catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    /* Java NIO - non-blocking reading  */
+    public static void readNIOFile() throws IOException {
+        BufferedReader reader = null;
+        try {
+            Path inputFile = Paths.get("xanadu.txt");
+            reader = Files.newBufferedReader(inputFile, Charset.defaultCharset());
+            String lineFromFile = "";
+            while ((lineFromFile = reader.readLine()) != null) {
+                System.out.println(lineFromFile);
+            }
+        } catch (IOException e){
+            System.out.println(e);
+        } finally {
+            if(reader != null)
+                reader.close();
+        }
+    }
+
+    /* Java NIO - non-blocking writing */
+    public static void writeFile() throws IOException {
+        BufferedWriter writer = null;
+        try {
+            Path outputFile = Paths.get("niooutput.txt");
+            writer = Files.newBufferedWriter(outputFile, Charset.defaultCharset());
+            StringBuilder message = new StringBuilder("This is a message going into the file.");
+            writer.append(message);
+        } catch (IOException e){
+            System.out.println(e);
+        } finally {
+            if(writer != null)
+                writer.close();
         }
     }
 }
