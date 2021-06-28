@@ -52,4 +52,28 @@ public class Sketch
     // - un'altra classe deve rappresentare il menu/le azioni effettivamente eseguibili
     // - "quizmanager" diventa ==> "todolist-manager"
     // - pensate bene a un gestore dell'input/output (cfr. la classe "lettore" di quiz)
+
+    // Per l'analisi:
+    //
+    // GRUPPO 1: Agnese, Fabiola, Veronica
+    //         01. Visualizza
+    //             01. Per priorità *
+    //             02. Per data **
+    //             03. Per stato ***
+    //
+    // GRUPPO 2: Davide, Alberto, Stefano
+    //         02. Aggiungi, Rimuovi, Modifica
+    //             01. Aggiungi (titolo, descrizione, data consegna, priorità) *
+    //             02. Rimuovi (si passa: id) **
+    //             03. Modifica (si passa: id, data di consegna, priorità, stato) ***
+    //
+    // GRUPPO 3: Niki, Gabriele G., Gabriele M.
+    //         03. Import/Export
+    //             01. Export su file *
+    //             02. Import da file **
+    //         04. Uscita ***
+    //
+    // GRUPPO 4: Daniele, Alessandro, Alessio
+    //         - Gestione persistenza su file *
+    //         - Gestione del MENU (come si mostrano/lanciano i vari comandi) **
 }
