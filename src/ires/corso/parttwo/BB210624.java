@@ -7,6 +7,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,10 +31,10 @@ public class BB210624
         try {
             // copyBytes(); NO!
             // copyCharacters(); NO!
-            // copyLines(); // <== UTILIZZIAMO QUESTO COME "VECCHIO INPUT"
+            copyLines(); // <== UTILIZZIAMO QUESTO COME "VECCHIO INPUT"
             copyStreams(); // <== NUOVO INPUT (Java 8)
         }
-        catch(Exception e) {
+        catch(IOException | SQLException e) {
             System.out.println("Si è verificata un'eccezione...");
         }
         System.out.println("Fine del programma");
@@ -57,18 +58,23 @@ public class BB210624
                 out.write(c);
             }
         }
-        /*
-        catch(Exception e) {
+        catch(IOException e) {
             // Gestione dell'eccezione: log su file/su console
+            // poi la rilancio...
+            throw e;
         }
-         */
         finally {
-            if (in != null) {
-                in.close();
+            try {
+                if (in != null) {
+                    in.close();
+                }
+                if (out != null) {
+                    out.close();
+                }
             }
-            if (out != null) {
-                out.close();
+            catch(IOException e) {
             }
+            // Gestione deve essere fatta, altrimenti l'eccezione è "silenziata" senza risolverla!
         }
     }
 
@@ -135,7 +141,7 @@ public class BB210624
     }
 
     /* Java 8 */
-    public static void copyStreams()
+    public static void copyStreams() throws SQLException
     {
         ThePrinter tp = new ThePrinter();
 
@@ -146,7 +152,13 @@ public class BB210624
                 tp.printSomething(is.next());
             }
         }
-        catch(Exception e) {
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+        catch(NullPointerException | ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
+        catch(ArithmeticException e) {
             e.printStackTrace();
         }
 
@@ -160,6 +172,8 @@ public class BB210624
         catch (IOException e) {
             e.printStackTrace();
         }
+
+        if(true) throw new SQLException();
     }
 
     /* Java NIO - non-blocking reading  */
